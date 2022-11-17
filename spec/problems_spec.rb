@@ -1,13 +1,15 @@
 require "problems"
 
 describe "pow(base, exponent)" do
-    it "should correctly calculate any base raised to the 0-th power" do
+    it "should correctly calculate any base raised to the 
+    0-th power" do
         expect(pow(2, 0)).to eq(1)
         expect(pow(7, 0)).to eq(1)
         expect(pow(10, 0)).to eq(1)
     end
 
-    it "should calculate the base raised to the exponent power" do
+    it "should calculate the base raised to the exponent 
+    power" do
         expect(pow(2, 1)).to eq(2)
         expect(pow(2, 5)).to eq(32)
         expect(pow(3, 4)).to eq(81)
