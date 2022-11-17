@@ -111,10 +111,23 @@ end
 #     2-dimensional array: [['some data']]
 #     3-dimensional array: [[['some data']]]
 def flatten(data)
-    return data if data != is_a?
+    # return [data] if !data.is_a? Array
 
-    
-    
+    new_arr = []
+    data.each do |ele|
+        if !ele.is_a? Array
+            new_arr << ele
+        else
+            flatten(ele).each do |e|
+                new_arr << e
+            end
+        end
+    end
+
+    new_arr
 end
 
-end
+
+# p flatten([1,[9], 2,3,4])
+# p flatten([9])
+p flatten([1, 2, [[3, 4], [5, [6]]], [7, 8]])
